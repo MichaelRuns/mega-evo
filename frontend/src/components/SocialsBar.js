@@ -8,10 +8,11 @@ const socials = [
 ];
 const SocialsBar = () => {
     return (
-        <div className="flex flex-row justify-between text-black">
+        <div className="flex flex-row justify-between text-white bg-transparent">
             {socials.map((item, idx) => (
                 <button key={idx}>
                     <item.icon/>
+                    <p>{item.name}</p>
                 </button>
             ))}
         </div>

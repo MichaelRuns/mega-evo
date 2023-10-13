@@ -10,11 +10,10 @@ function App() {
   return (
     <Background>
       <AboutBar/>
-       <div className="h-screen flex items-center justify-center">
+       <div className="h-4/5 flex items-center justify-center">
       <Welcome isOpen={greeting} setIsOpen={setGreeting}></Welcome>
       {!greeting && <ProjectPresent/>}
       </div>
-      <SocialsBar/>
     </Background>
   
   );
