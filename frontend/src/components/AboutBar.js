@@ -1,35 +1,49 @@
-import { SparklesIcon, ChevronRightIcon} from "@heroicons/react/outline";
-import React from "react";
-import { useState } from "react";
+import { SparklesIcon, ChevronUpIcon, ChevronRightIcon } from "@heroicons/react/outline";
+import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
+import { Fragment } from "react";
+
 const AboutBar = () => {
-    const [extended, setExtended] = useState(false);
-    return (
-        <div className="flex flex-row gap-4 text-white font-semibold items-center mt-4">
-        <div className='w-50 h-50 text-white cursor-grab' onClick={()=>setExtended(!extended)}>
-            <div className="flex flex-row">
-                <SparklesIcon/>
-                <ChevronRightIcon/>
-            </div>
-            <p className='text-nowrap'> about</p>
+  const [extended, setExtended] = useState(false);
+
+  const paragraphs = [
+    "Resume",
+    "Background",
+    "Goals",
+    "Athletics",
+    "Passions",
+    "Family",
+  ];
+
+  return (
+    <div className="flex flex-row justify-between gap-4 text-white font-semibold items-center mt-4 mr-3 w-full">
+      <div
+        className={`w-50 h-50 ${extended ? "text-pink-400" : "text-white"} cursor-grab`}
+        onClick={() => setExtended(!extended)}
+      >
+        <div className="flex flex-row">
+          <SparklesIcon />
+          {extended? <ChevronRightIcon /> : <ChevronUpIcon />}
         </div>
-        <Transition show={extended}
-        enter="ease-out duration-300"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="ease-in duration-200"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95">
-            <div className="flex flex-row gap-4">
-                <p> Resume</p>
-                <p> Background </p>
-                <p> Goals </p>
-                <p> Athletics</p>
-                <p> Passions </p>
-                <p> Family </p>
-            </div>
+        <p className="text-nowrap">about</p>
+      </div>
+      {paragraphs.map((text, index) => (
+        <Transition
+          key={index}
+          show={extended}
+          as={Fragment}
+          enter="transition-transform transition-scale duration-500"
+          enterFrom="-translate-x-full scale-0"
+          enterTo="translate-x-0 scale-100"
+          leave="transition-transform transition-scale duration-500"
+          leaveFrom="translate-x-0 scale-100"
+          leaveTo="-translate-x-full scale-0"
+        >
+          <p>{text}</p>
         </Transition>
-        </div>
-    );
-}
-export default AboutBar
+      ))}
+    </div>
+  );
+};
+
+export default AboutBar;

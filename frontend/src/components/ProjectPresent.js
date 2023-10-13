@@ -16,7 +16,7 @@ const projects = [
     },
     {
       title: "Pythia",
-      text: "Applied ML to automate qualtity control on the production line",
+      text: "Applied ML to automate quality control on the production line",
     }
     // Add more projects as needed
   ];
