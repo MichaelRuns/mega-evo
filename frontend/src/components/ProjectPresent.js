@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Tile from "../headless/Tile";
-import { Transition } from "@headlessui/react";
 const projects = [
     {
       title: "Helius+",
@@ -23,7 +22,7 @@ const projects = [
 
 const ProjectPresent = () => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
       {projects.map((project, index) => (
         <Tile key={index} title={project.title} text={project.text}/>
       ))}
