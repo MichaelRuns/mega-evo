@@ -24,7 +24,7 @@ const projects = [
   ];
 const ProjectDisplay = () => {
  return (
-    <div className="col-span-3 flex justify-between p-2">
+    <div className="col-span-3 flex justify-between p-2 -translate-y-2">
          {projects.map((project, index) => (
         <Tile key={index} title={project.title} text={project.text} desription={project.description}/>
       ))}
