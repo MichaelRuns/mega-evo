@@ -22,7 +22,7 @@ const projects = [
 
 const ProjectPresent = () => {
   return (
-    <div className="flex flex-row gap-2">
+    <div className="">
       {projects.map((project, index) => (
         <Tile key={index} title={project.title} text={project.text}/>
       ))}
