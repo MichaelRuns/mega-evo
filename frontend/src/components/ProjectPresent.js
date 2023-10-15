@@ -3,26 +3,26 @@ import Tile from "../headless/Tile";
 const projects = [
     {
       title: "Helius+",
-      text: "Point Cloud perception and tracking for smart infrastructure",
+      text: "Point Cloud Perception",
     },
     {
       title: "Chidori",
-      text: "Generative AI images w/ web deployment",
+      text: "DCGAN Image Generation",
     },
     {
-      title: "Koito 5 station calibration station",
-      text: "Robotics in Japan! multithreading! Leadership!",
+      title: "Koito calibration station",
+      text: "Robotics in Japan! Leadership",
     },
-    {
-      title: "Pythia",
-      text: "Applied ML to automate quality control on the production line",
-    }
+    // {
+    //   title: "Pythia",
+    //   text: "Applied ML to automate quality control on the production line",
+    // }
     // Add more projects as needed
   ];
 
 const ProjectPresent = () => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4">
+    <div className="flex flex-row gap-2">
       {projects.map((project, index) => (
         <Tile key={index} title={project.title} text={project.text}/>
       ))}

@@ -1,6 +1,6 @@
 const ContentArea = () => {
     return (
-        <div className="col-span-2 bg-zinc-400 rounded opacity-50 grid grid-cols-2">
+        <div className="col-span-2 rounded border grid grid-cols-2">
             <div className="w-full overflow-hidden"> {/* Adjust the height as needed */}
                 <img
                     src={process.env.PUBLIC_URL + '/senior_headshot.jpg'}

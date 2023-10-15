@@ -15,11 +15,11 @@ const Tile = ({ title, text }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
         {/* Title */}
-        <h2 className="text-xl font-semibold text-black mb-2">{title}</h2>
+        <h2 className="text-xl font-semibold text-black mb-2">{text}</h2>
         {/* Hero Icon (You can replace this with your custom HeroIcon) */}
         <PlusIcon className="w-8 h-8 text-black" />
         {/* Text */}
-        <p className="text-gray-600 mt-2">{text}</p>
+        <p className="text-gray-600 mt-2">{title}</p>
       </div>
   );
 };
