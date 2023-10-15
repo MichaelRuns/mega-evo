@@ -1,4 +1,16 @@
+import React from "react";
+import { useContext } from "react";
+import { DigizoidContext } from "./ContextProvider";
+
+const Writings = [
+    {title:"Background", Paragraph: "Hi! My name is Michael Vernau. I am a Software Engineer based in San Francisco. I graduated with my BS in Computer Science from Stanford, where I ran varsity Track and Field. These days, I'd describe myself as a full stack ML engineer."},
+    {title:"Experience", Paragraph: "I currently work on the Perception team at Cepton, a San Jose based Lidar company. Here, I serve as the AI lead on our Lidar based perception stack, Helius+. I'm also responsible for much of the Ux on our customer facing software products and marketing materials"},
+    {title: "Interests", Paragraph:"In my time in the industry, I've come to develop a passion for perception, especially computer vision. I'm also interested in the broader world of AI, especitally making the future of safe and usable AI tools"},
+    {title: "Hobbies", Paragraph:"Card games. Running. Lifting. Restaurants. Vet Med"}
+
+];
 const ContentArea = () => {
+    const {item} = useContext(DigizoidContext);
     return (
         <div className="col-span-2 rounded border grid grid-cols-2 border-2">
             <div className="h-full overflow-hidden "> {/* Adjust the height as needed */}
@@ -8,9 +20,13 @@ const ContentArea = () => {
                     className="rounded object-cover border-2 border-black"
                 />
             </div>
-            <div className="text-white font-semibold p-5"> 
-                Everything that you thought had meaning: every hope, dream, or moment of happiness. None of it matters as you lie bleeding out on the battlefield. None of it changes what a speeding rock does to a body, we all die. But does that mean our lives are meaningless? Does that mean that there was no point in our being born? Would you say that of our slain comrades? What about their lives? Were they meaningless?... They were not! Their memory serves as an example to us all! The courageous fallen! The anguished fallen! Their lives have meaning because we the living refuse to forget them! And as we ride to certain death, we trust our successors to do the same for us! Because my soldiers do not buckle or yield when faced with the cruelty of this world! My soldiers push forward! My soldiers scream out! My soldiers RAAAAAGE!
+            <div><div className="text-white font-semibold p-5"> 
+                {Writings[item % Writings.length].title}
             </div>
+            <div className="text-white p-5"> 
+                {Writings[item % Writings.length].Paragraph}
+            </div></div>
+            
         </div>
     );
 };

@@ -18,13 +18,13 @@ const TopBar = () => {
             onClick={()=>console.log(item)}>
         <SparklesIcon className="h-full"/>
     </button>
-        {menuItems.map((item,idx) =>(
+        {menuItems.map((item_,idx) =>(
             <button key={idx}
-                    className={containerStyle + ` bg-white -translate-x-4`}
+                    className={containerStyle + ` ${item!==idx ? 'bg-white opacity-50': 'bg-white border border-black border-2 opacity-100'} -translate-x-4`}
                     onClick={()=>{
                       setItem(idx);
                     }}>
-                      {item.name}
+                      {item_.name}
             </button>
         ))}
     </div>

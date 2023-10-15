@@ -7,7 +7,7 @@ const Tile = ({ title, text, desription}) => {
   return (
     <div
       className={`relative rounded-lg transition-transform ${
-        isHovered ? "scale-110" : "scale-100"
+        isHovered ? "scale-105" : "scale-100"
       } bg-zinc-100 p-4 ${
         isHovered ? "h-full" : "h-1/3"
       } transition-all duration-300`}
