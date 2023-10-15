@@ -1,7 +1,13 @@
+import React from "react";
+import { createContext, useState} from "react";
+
+
+const DigizoidContext = createContext();
 const ContextProvider = ({ children }) => {
+    const [item, setItem] = useState(0);
     return (
-        <div>{children}</div>
+        <DigizoidContext.Provider value={{item, setItem}}>{children}</DigizoidContext.Provider>
         
     );
 };
-export default ContextProvider;
+export {DigizoidContext, ContextProvider}
