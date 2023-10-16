@@ -16,6 +16,7 @@ const TopBar = () => {
     <div className="row-span-1 col-span-5 flex flex-row justify-between items-center gap-x-10 p-6 ">
     <button className={containerStyle + ' bg-pink-300'}
             onClick={()=>console.log(item)}>
+        LinkTree
         <SparklesIcon className="h-full"/>
     </button>
         {menuItems.map((item_,idx) =>(
