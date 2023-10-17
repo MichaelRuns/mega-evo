@@ -25,14 +25,14 @@ const Tile = ({ title, text, description, imagePath, link}) => {
        <div className="flex justify-center items-center h-full w-full">
                 <div className="font-semibold text-xl"> {text} </div>
         </div>
-        <div className="h-full overflow-hidden row-span-1 "> {/* Adjust the height as needed */}
+        <div className="h-full overflow-hidden row-span-1 flex justify-center"> {/* Adjust the height as needed */}
                 <img
                     src={process.env.PUBLIC_URL + "/" + imagePath}
                     alt="mike"
                     className={`rounded object-cover border-2 border-black h-full`}
                 />
             </div>
-            {isHovered &&<div className="flex justify-center items-center h-full w-full">
+            {isHovered &&<div className="flex justify-center items-center h-full w-full font-semibold italic">
                   <div> {title}</div>
             </div>
             }
