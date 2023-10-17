@@ -12,7 +12,7 @@ const Writings = [
 const ContentArea = () => {
     const {item} = useContext(DigizoidContext);
     return (
-        <div className="col-span-2 rounded border grid grid-cols-2 border-2 bg-slate-500 bg-opacity-90 items-center">
+        <div className="col-span-2 rounded border grid grid-cols-2 grid-rows-[80%,20%] border-2 bg-slate-500 bg-opacity-90 items-center">
             <div className="h-full overflow-hidden flex items-center"> {/* Adjust the height as needed */}
                 <img
                     src={process.env.PUBLIC_URL + '/senior_headshot.jpg'}
@@ -20,13 +20,19 @@ const ContentArea = () => {
                     className="rounded object-cover border-2 border-black"
                 />
             </div>
-            <div><div className="text-white font-semibold p-5 opacity-100"> 
-                {Writings[item % Writings.length].title}
-            </div>
-            <div className="text-white p-5"> 
+            <div className="">
+                <div className="text-white font-semibold p-5 opacity-100"> 
+                    {Writings[item % Writings.length].title}
+                </div>
+                <div className="text-white p-5"> 
                 {Writings[item % Writings.length].Paragraph}
-            </div></div>
-            
+                </div>  
+            </div>
+            <div className="col-span-2 flex flex-row justify-center gap-x-10 items-center">  
+                    {Writings.map((writing, idx) =>(
+                        <div className={`rounded ${item===idx? " bg-black text-black":"bg-white text-white"}`}>{idx}</div>
+                    ))}
+            </div>
         </div>
     );
 };

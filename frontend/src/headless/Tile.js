@@ -5,11 +5,11 @@ const Tile = ({ title, text, description, imagePath, link}) => {
 
   return (
     <div
-      className={`relative rounded-lg transition-transform cursor-pointer ${
+      className={`relative rounded-lg transition-transform ${link && "cursor-pointer"} ${
         isHovered ? "scale-110" : "scale-100"
       } bg-zinc-100 bg-opacity-90 p-2 ${
         isHovered ? "h-full w-full" : "h-1/2 w-1/2"
-      } transition-all duration-300 grid grid-rows-${isHovered?"[10%,40%,10%,40%]":"[30%,70%]"} grid-cols-[100%]`}
+      } transition-all duration-300 grid grid-rows-${isHovered?"[10%,40%,10%,40%] z-50":"[30%,70%]"} grid-cols-[100%]`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => {
