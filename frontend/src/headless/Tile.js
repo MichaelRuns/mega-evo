@@ -1,33 +1,39 @@
 import React, { useState } from "react";
 
-const Tile = ({ title, text, description, imagePath}) => {
+const Tile = ({ title, text, description, imagePath, link}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
       className={`relative rounded-lg transition-transform cursor-pointer ${
         isHovered ? "scale-110" : "scale-100"
-      } bg-zinc-100 p-4 ${
+      } bg-zinc-100 bg-opacity-90 p-2 ${
         isHovered ? "h-full w-full" : "h-1/2 w-1/2"
-      } transition-all duration-300`}
+      } transition-all duration-300 grid grid-rows-${isHovered?"[10%,40%,10%,40%]":"[30%,70%]"} grid-cols-[100%]`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => {
-        window.open("https://www.cepton.com/products-2023/helius", '_blank')
+        link &&
+        window.open(link, '_blank')
       }}
     >
-        <h2 className="text-xl font-semibold text-black mb-2">{text}</h2>
-        <p className="text-gray-600 mt-2">{title}</p>
-        {isHovered && <div>
-           <p> {description}</p>
-          </div>}
-        <div className="h-full overflow-hidden justify-self-center"> {/* Adjust the height as needed */}
+       <div className="flex justify-center items-center h-full w-full">
+                <div className="font-semibold text-xl"> {text} </div>
+        </div>
+        <div className="h-full overflow-hidden row-span-1 "> {/* Adjust the height as needed */}
                 <img
                     src={process.env.PUBLIC_URL + "/" + imagePath}
                     alt="mike"
-                    className={`rounded object-cover border-2 border-black ${isHovered? "w-1/2" : "w-40 h-20"}`}
+                    className={`rounded object-cover border-2 border-black h-full`}
                 />
             </div>
+            {isHovered &&<div className="flex justify-center items-center h-full w-full">
+                  <div> {title}</div>
+            </div>
+            }
+            {isHovered &&<div className="flex justify-center h-full w-full">
+              <div className="font-small">{description}</div>
+            </div>}
       </div>
   );
 };

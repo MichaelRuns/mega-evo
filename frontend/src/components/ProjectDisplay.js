@@ -4,19 +4,21 @@ const projects = [
     title: "Helius+",
     text: "Point Cloud Perception",
     img: "SLIDER-Appen_image_annotation_05.jpeg",
-    description: "lorem ipsum"
+    description: "lorem ipsum",
+    link: "https://www.cepton.com/products-2023/helius"
   },
   {
     title: "Chidori",
     text: "DCGAN Image Generation",
-    img: "mt_fuji.JPG",
-    description: "lorem ipsum"
+    img: "chidori.png",
+    description: "lorem ipsum",
+    link: "http://chidori.michaelvernau.com/"
   },
   {
     title: "Koito calibration station",
-    text: "Robotics in Japan! Leadership",
-    img: "koito_mishima.JPG",
-    description: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+    text: "Automated Lidar Calibration",
+    img: "koito_squish.JPG",
+    description: "lorem ipsum lorem ipsum lorem ipsum"
   },
     // {
     //   title: "Pythia",
@@ -28,7 +30,7 @@ const ProjectDisplay = () => {
  return (
     <div className="col-span-3 flex justify-between gap-1 p-2 -translate-y-2">
          {projects.map((project, index) => (
-        <Tile key={index} title={project.title} text={project.text} description={project.description} imagePath={project.img}/>
+        <Tile key={index} title={project.title} text={project.text} description={project.description} imagePath={project.img} link={project.link}/>
       ))}
     </div>
  );
