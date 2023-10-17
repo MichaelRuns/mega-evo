@@ -1,4 +1,7 @@
 import Tile from "../headless/Tile";
+import { DigizoidContext } from "./ContextProvider";
+import React from "react";
+import { useContext} from "react";
 const projects = [
   {
     title: "Helius+",
@@ -27,9 +30,10 @@ const projects = [
     // Add more projects as needed
   ];
 const ProjectDisplay = () => {
+  const context = useContext(DigizoidContext);
  return (
     <div className="col-span-3 flex justify-between gap-1 p-2 -translate-y-2">
-         {projects.map((project, index) => (
+         {context.projects.map((project, index) => (
         <Tile key={index} title={project.title} text={project.text} description={project.description} imagePath={project.img} link={project.link}/>
       ))}
     </div>

@@ -12,7 +12,7 @@ const Writings = [
 const ContentArea = () => {
     const {item} = useContext(DigizoidContext);
     return (
-        <div className="col-span-2 rounded border grid grid-cols-2 grid-rows-[80%,20%] border-2 bg-slate-500 bg-opacity-90 items-center">
+        <div className="col-span-2 rounded border grid grid-cols-2 grid-rows-[80%,20%] border-2 bg-slate-500 items-center">
             <div className="h-full overflow-hidden flex items-center"> {/* Adjust the height as needed */}
                 <img
                     src={process.env.PUBLIC_URL + '/senior_headshot.jpg'}

@@ -1,17 +1,22 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import { DigizoidContext } from "../components/ContextProvider";
 const Tile = ({ title, text, description, imagePath, link}) => {
   const [isHovered, setIsHovered] = useState(false);
-
+  const context = useContext(DigizoidContext);
   return (
     <div
       className={`relative rounded-lg transition-transform ${link && "cursor-pointer"} ${
         isHovered ? "scale-110" : "scale-100"
-      } bg-zinc-100 bg-opacity-90 p-2 ${
+      } bg-zinc-100  p-2 ${
         isHovered ? "h-full w-full" : "h-1/2 w-1/2"
       } transition-all duration-300 grid grid-rows-${isHovered?"[10%,40%,10%,40%] z-50":"[30%,70%]"} grid-cols-[100%]`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        context.setAnyItemHovered(true);}}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        context.setAnyItemHovered(false);
+      }}
       onClick={() => {
         link &&
         window.open(link, '_blank')
