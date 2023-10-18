@@ -12,10 +12,10 @@ const containerStyle = `col-span-1 h-1/2 w-1/2 text-black rounded flex items-cen
 const TopBar = () => {
   const context = useContext(DigizoidContext);
   return (
-    <div className="row-span-1 col-span-5 flex flex-row justify-between items-center lg:gap-x-10 md:gap-x-5 sm:gap-x-1 xs:gap-x-1 text-xs md:text-base">
-    <button className={containerStyle + ' bg-pink-300'}
+    <div className="row-span-1 col-span-5 flex flex-row justify-between items-center gap-x-1 lg:gap-x-10 md:gap-x-5 sm:gap-x-1 text-xs md:text-base">
+    <button className={containerStyle + ' bg-black border-white border'}
             onClick={()=>{window.open("https://linktr.ee/michaelvernau", "_blank");}}>
-        LinkTree
+        <img src={process.env.PUBLIC_URL + "/favicon.ico"} alt="LinkTree" />
     </button>
         {menuItems.map((item_,idx) =>(
             <button key={idx}
