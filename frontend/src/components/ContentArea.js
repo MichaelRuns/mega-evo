@@ -12,7 +12,7 @@ const Writings = [
 const ContentArea = () => {
     const context = useContext(DigizoidContext);
     return (
-        <div className="col-span-2 rounded border grid grid-cols-2 grid-rows-[90%,10%] border-2 bg-slate-500 items-center">
+        <div className=" col-span-5 md:col-span-2 rounded border grid grid-cols-2 grid-rows-[90%,10%] border-2 bg-slate-500 items-center">
             <div className="h-full overflow-hidden flex items-start border-b"> {/* Adjust the height as needed */}
                 <img
                     src={process.env.PUBLIC_URL + '/senior_headshot.jpg'}
@@ -21,10 +21,10 @@ const ContentArea = () => {
                 />
             </div>
             <div className="border-b h-full">
-                <div className="text-white font-semibold p-5 opacity-100"> 
+                <div className="text-white font-semibold opacity-100 p-1 md:p-5 text-xs md:text-xl"> 
                     {Writings[context.item % Writings.length].title}
                 </div>
-                <div className="text-white p-5"> 
+                <div className="text-white sm:p-2 md:p-5 text-xs md:text-base"> 
                 {Writings[context.item % Writings.length].Paragraph}
                 </div>  
             </div>

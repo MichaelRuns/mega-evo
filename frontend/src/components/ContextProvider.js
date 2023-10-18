@@ -41,7 +41,7 @@ const ContextProvider = ({ children }) => {
         if (!anyItemHovered){
             const timer  = setInterval(() => {
                 setProjectOffset((prevOffset) => (prevOffset + 1) % projects.length);
-            }, 5000);
+            }, 2000);
             return ()=>{clearInterval(timer);};
         }
     }, [projects.length, anyItemHovered]);

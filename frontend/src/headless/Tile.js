@@ -23,7 +23,7 @@ const Tile = ({ title, text, description, imagePath, link}) => {
       }}
     >
        <div className="flex justify-center items-center h-full w-full">
-                <div className="font-semibold text-xl"> {text} </div>
+                <div className="font-semibold text-sm md:text-xl"> {text} </div>
         </div>
         <div className="h-full overflow-hidden row-span-1 flex justify-center"> {/* Adjust the height as needed */}
                 <img
@@ -32,12 +32,12 @@ const Tile = ({ title, text, description, imagePath, link}) => {
                     className={`rounded object-cover border-2 border-black h-full`}
                 />
             </div>
-            {isHovered &&<div className="flex justify-center items-center h-full w-full font-semibold italic">
+            {isHovered &&<div className="flex justify-center items-center h-full w-full font-semibold italic text-sm">
                   <div> {title}</div>
             </div>
             }
             {isHovered &&<div className="flex justify-center h-full w-full">
-              <div className="font-small">{description}</div>
+              <div className="text-[7px] md:text-base">{description}</div>
             </div>}
       </div>
   );
